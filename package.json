@@ -1,0 +1,13 @@
+{
+  "name": "fayera-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal portfolio for Fayera Bekele Dilgasa, written in TypeScript",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.0"
+  }
+}

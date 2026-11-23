@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fayera Bekele Dilgasa · ML Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--me:url("data:image/jpeg;base64,/*PHOTO*/")}
+:root,:root[data-theme=dark]{--bg:#1e1e1e;--bg2:#181818;--panel:#252526;--line:#333;--fg:#d4d4d4;--dim:#858585;--acc:#4fc1ff;--kw:#569cd6;--st:#ce9178;--fn:#dcdcaa;--cm:#6a9955;--nu:#b5cea8;--mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;--sans:Inter,system-ui,sans-serif;color-scheme:dark;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root[data-theme=dracula]{--bg:#282a36;--bg2:#21222c;--panel:#2f3142;--line:#44475a;--fg:#f8f8f2;--dim:#8b93c0;--acc:#bd93f9;--kw:#ff79c6;--st:#f1fa8c;--fn:#50fa7b;--cm:#6272a4;--nu:#ffb86c}
+:root[data-theme=monokai]{--bg:#272822;--bg2:#1f201b;--panel:#30312a;--line:#49483e;--fg:#f8f8f2;--dim:#90908a;--acc:#a6e22e;--kw:#f92672;--st:#e6db74;--fn:#a6e22e;--cm:#75715e;--nu:#ae81ff}
+:root[data-theme=nord]{--bg:#2e3440;--bg2:#272c36;--panel:#3b4252;--line:#4c566a;--fg:#e5e9f0;--dim:#8d97ab;--acc:#88c0d0;--kw:#81a1c1;--st:#a3be8c;--fn:#88c0d0;--cm:#616e88;--nu:#b48ead}
+:root[data-theme=light]{--bg:#fff;--bg2:#f3f4f6;--panel:#f8f9fb;--line:#d8dee4;--fg:#24292f;--dim:#6e7781;--acc:#0969da;--kw:#cf222e;--st:#0a3069;--fn:#8250df;--cm:#6e7781;--nu:#0550ae;color-scheme:light}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.7 var(--sans);transition:background .3s,color .3s;padding-bottom:40px}
+a{color:var(--acc);text-decoration:none}
+#prog{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--acc),var(--kw));z-index:50}
+/* sidebar / header */
+header{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg2) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:10px 16px}
+.logo{font:600 16px var(--mono);color:var(--fg)}.logo span{color:var(--acc)}.logo small{display:block;font:11px var(--mono);color:var(--dim)}
+.lbl{font:11px var(--mono);letter-spacing:.14em;color:var(--dim);margin:14px 0 6px;display:none}
+#nav{display:flex;gap:4px;overflow-x:auto;margin-top:8px;font:13px var(--mono)}#nav a{color:var(--dim);padding:3px 10px;border-radius:5px;white-space:nowrap}#nav a::after{content:".ts";color:var(--kw)}#nav a:hover,#nav a.on{background:var(--panel);color:var(--fg)}#nav a.on{box-shadow:inset 2px 0 var(--acc)}
+#themes{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.theme-btn{display:flex;gap:8px;align-items:center;font:12px var(--mono);background:var(--panel);color:var(--dim);border:1px solid var(--line);border-radius:6px;padding:4px 9px;cursor:pointer}
+.theme-btn.on,.theme-btn:hover{color:var(--fg);border-color:var(--acc)}.sw{display:flex}.sw i{width:9px;height:9px;border-radius:50%;margin-right:-2px;border:1px solid #0006}
+.side-foot{display:none;font:12px var(--mono);color:var(--dim)}
+@media (min-width:1000px){
+header{position:fixed;top:0;bottom:0;left:0;width:250px;border-bottom:0;border-right:1px solid var(--line);padding:22px 16px;display:flex;flex-direction:column;backdrop-filter:none;background:var(--bg2)}
+.lbl,.side-foot{display:block}#nav{flex-direction:column;overflow:visible;margin-top:0}#nav a{padding:5px 12px}#nav a::before{content:"▸ ";color:var(--dim)}
+#themes{flex-direction:column}.side-foot{margin-top:auto}
+main,footer{margin-left:250px}}
+/* status bar */
+.status{position:fixed;left:0;right:0;bottom:0;z-index:30;display:flex;gap:18px;justify-content:space-between;padding:3px 14px calc(3px + env(safe-area-inset-bottom,0px));background:var(--acc);color:var(--bg);font:12px var(--mono);overflow:hidden;white-space:nowrap}
+.status span+span{margin-left:14px}
+main{max-width:1100px;margin:0 auto;padding:0 28px}
+section{padding:84px 0 8px}
+.sh{margin-bottom:34px}.sh .file{display:inline-block;font:12px var(--mono);color:var(--dim);background:var(--panel);border:1px solid var(--line);border-bottom:2px solid var(--acc);padding:2px 12px;border-radius:6px 6px 0 0}
+h2{margin:10px 0 4px;font:700 clamp(30px,4.5vw,44px)/1.1 var(--sans);letter-spacing:-.02em}.sub{font:13px var(--mono);color:var(--cm);margin:0}
+h3{margin:0 0 6px;font-size:17px}
+.rv,.sh,.hero-in{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.in{opacity:1;transform:none}
+/* hero */
+.hero{min-height:calc(100vh - 40px);display:grid;grid-template-columns:1.05fr .95fr;gap:44px;align-items:center;padding-top:60px;position:relative}
+.hero::before{content:"";position:absolute;inset:-10% -20% auto auto;width:620px;height:620px;background:radial-gradient(circle,color-mix(in srgb,var(--acc) 22%,transparent),transparent 65%);z-index:-1;pointer-events:none}
+.avail{display:inline-flex;gap:8px;align-items:center;font:12px var(--mono);color:var(--dim);border:1px solid var(--line);background:var(--panel);padding:5px 14px;border-radius:99px}.avail i{width:8px;height:8px;border-radius:50%;background:#3fb950;box-shadow:0 0 8px #3fb950}
+.hi{margin:22px 0 0;font:18px var(--mono);color:var(--acc)}
+h1{margin:4px 0 10px;font:700 clamp(44px,7vw,80px)/1.02 var(--sans);letter-spacing:-.03em}h1 span{display:block}
+.first{background:linear-gradient(90deg,var(--acc),var(--kw));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font:600 clamp(17px,2.6vw,24px) var(--mono);color:var(--fn);min-height:1.6em}.role b{color:var(--dim);font-weight:400}
+.cursor{display:inline-block;width:2px;height:1em;margin-left:2px;background:var(--fg);vertical-align:text-bottom;animation:b 1s steps(2) infinite}@keyframes b{50%{opacity:0}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0}.chips span{font:12px var(--mono);border:1px solid var(--line);border-radius:99px;padding:3px 13px;color:var(--st);background:var(--panel)}
+.lead{max-width:56ch;color:var(--dim);margin:0 0 6px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0}
+.btn{display:inline-block;padding:10px 20px;border-radius:8px;border:1px solid var(--acc);color:var(--acc);font:600 13px var(--mono);transition:.2s;background:transparent;cursor:pointer}.btn:hover{transform:translateY(-2px)}
+.btn.main{background:var(--acc);color:var(--bg)}.btn.dis{opacity:.5;cursor:not-allowed;border-style:dashed}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:520px;margin-top:8px}.stat{border-left:2px solid var(--acc);padding-left:12px}.stat b{display:block;font:700 28px var(--mono)}.stat small{font:11px var(--mono);color:var(--dim)}
+.code{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 30px 60px #0004}
+.tabs{display:flex;align-items:center;gap:7px;padding:10px 14px;background:var(--bg2);border-bottom:1px solid var(--line);font:12px var(--mono);color:var(--dim)}.tabs i{width:11px;height:11px;border-radius:50%;background:#ff5f56}.tabs i:nth-child(2){background:#ffbd2e}.tabs i:nth-child(3){background:#27c93f}.tabs b{margin-left:10px;font-weight:400;color:var(--fg)}
+.code pre{margin:0;padding:16px 14px 16px 0;overflow-x:auto;font:13.5px/1.85 var(--mono);counter-reset:l}
+.ln{display:block;white-space:pre}.ln::before{counter-increment:l;content:counter(l);display:inline-block;width:3em;margin-right:16px;text-align:right;color:var(--dim);opacity:.5}
+.kw{color:var(--kw)}.st{color:var(--st)}.fn{color:var(--fn)}.cm{color:var(--cm);font-style:italic}.nu{color:var(--nu)}
+/* generic */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:20px;transition:transform .25s,border-color .25s,box-shadow .25s}.card:hover{transform:translateY(-4px);border-color:var(--acc);box-shadow:0 14px 30px color-mix(in srgb,var(--acc) 14%,transparent)}
+.card p{margin:6px 0 10px;font-size:14.5px;color:var(--dim)}
+.row{display:flex;justify-content:space-between;gap:10px;align-items:center}.num{font:600 12px var(--mono);color:var(--kw)}.since{font:11px var(--mono);color:var(--cm)}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 0}.tag{font:12px var(--mono);border:1px solid var(--line);border-radius:6px;padding:1px 10px;color:var(--st);background:var(--bg)}
+.split{display:grid;grid-template-columns:.8fr 1.2fr;gap:26px}
+.ident{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 20px;font:13px var(--mono)}.ident div{display:flex;gap:14px;padding:11px 0;border-bottom:1px dashed var(--line)}.ident div:last-child{border:0}.ident span{min-width:90px;color:var(--kw)}.ident b{font-weight:400;color:var(--fg)}
+#about-text p{margin:0 0 14px;max-width:68ch}
+.metrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:34px 0}.metric{text-align:center}.metric b{font:700 54px/1.1 var(--mono);background:linear-gradient(var(--acc),var(--kw));-webkit-background-clip:text;background-clip:text;color:transparent}.metric small{display:block;font:12px var(--mono);color:var(--dim)}
+.band{margin:84px 0 0;padding:44px 30px;text-align:center;border-radius:18px;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 16%,var(--panel)),color-mix(in srgb,var(--kw) 14%,var(--panel)));border:1px solid var(--line)}.band h2{margin:0 0 10px}.band p{max-width:58ch;margin:0 auto;color:var(--dim)}.band .cta{justify-content:center}
+.job{border-left:2px solid var(--line);padding:0 0 28px 24px;margin-left:6px;position:relative}.job::before{content:"";position:absolute;left:-7px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--acc);box-shadow:0 0 0 4px var(--bg)}
+.job .row{justify-content:flex-start}.meta{font:13px var(--mono);color:var(--dim)}.job ul,#pubs{padding-left:18px;margin:8px 0}li{margin:4px 0}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}.chip{font:12px var(--mono);background:var(--panel);color:var(--dim);border:1px solid var(--line);border-radius:99px;padding:5px 14px;cursor:pointer}.chip b{color:var(--kw);font-weight:600}.chip.on,.chip:hover{color:var(--bg);background:var(--acc);border-color:var(--acc)}.chip.on b{color:var(--bg)}
+.proj{padding:0;overflow:hidden}.pb{padding:16px 20px 20px}.pv{height:200px;position:relative;overflow:hidden}.pv img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block;transition:transform .5s}.pv img.fit{object-fit:contain;object-position:center;background:#fff}.card:hover .pv img{transform:scale(1.04)}.pv svg{width:100%;height:100%;display:block}.pv em{position:absolute;top:10px;right:10px;font:11px var(--mono);font-style:normal;border:1px dashed #fffb;border-radius:4px;padding:0 7px}
+.pv.ai{background:linear-gradient(135deg,var(--kw),var(--acc))}.pv.web{background:linear-gradient(135deg,var(--acc),var(--nu))}.pv.sec{background:linear-gradient(135deg,var(--st),var(--kw))}.pv.game{background:linear-gradient(135deg,var(--fn),var(--acc))}.pv.mobile{background:linear-gradient(135deg,var(--fn),var(--kw))}
+.links{display:flex;gap:16px;font:13px var(--mono);margin-top:12px}.off{color:var(--dim);cursor:not-allowed;text-decoration:line-through}
+.note{font:12px var(--mono);color:var(--dim)}
+form{display:grid;gap:12px}input,textarea{width:100%;font:14px var(--sans);color:var(--fg);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:11px 14px}input:focus,textarea:focus{outline:2px solid var(--acc);border-color:transparent}textarea{min-height:130px;resize:vertical}
+.alt a{display:flex;gap:14px;padding:12px 0;border-bottom:1px dashed var(--line);font:13px var(--mono);color:var(--fg)}.alt a span{color:var(--kw);min-width:70px}.alt a:hover{color:var(--acc)}
+.art{border:1px solid var(--line);border-radius:14px;background:linear-gradient(135deg,color-mix(in srgb,var(--acc) 12%,var(--panel)),var(--panel));margin-bottom:14px;padding:6px}.art svg{width:100%;display:block}.art .cur{animation:b 1s steps(2) infinite}
+.f-acc{fill:var(--acc)}.f-kw{fill:var(--kw)}.f-st{fill:var(--st)}.f-fn{fill:var(--fn)}.f-cm{fill:var(--cm)}.f-bg2{fill:var(--bg2)}.f-line{fill:var(--line)}
+.orbit{position:absolute;right:-90px;top:50%;width:600px;height:600px;margin-top:-300px;z-index:-1;opacity:.6;pointer-events:none}.spin{transform-origin:200px 200px;animation:spin 45s linear infinite}@keyframes spin{to{transform:rotate(360deg)}}
+.ico{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;margin-bottom:12px;color:var(--acc);background:color-mix(in srgb,var(--acc) 14%,var(--bg))}.ico svg{width:24px;height:24px}
+.priv{display:inline-flex;gap:6px;align-items:center;color:var(--st)}.priv svg{width:13px;height:13px}
+.me{background:var(--me) center 18%/cover no-repeat,var(--panel)}
+.cw{position:relative;padding-top:54px}.cw .code{position:relative}
+.avatar{position:absolute;top:0;right:18px;width:132px;height:132px;border-radius:50%;border:4px solid var(--bg);box-shadow:0 0 0 2px var(--acc),0 16px 36px #0006;z-index:3}
+.portrait{aspect-ratio:1;border-radius:16px;border:1px solid var(--line);position:relative;margin-bottom:14px;box-shadow:0 20px 40px #0003;overflow:hidden}
+.cap{position:absolute;left:12px;bottom:12px;font:12px var(--mono);color:#fff;background:#000a;backdrop-filter:blur(6px);padding:4px 12px;border-radius:99px}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.55}
+.card{position:relative}.card>*{position:relative}.card::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(260px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--acc) 20%,transparent),transparent 70%)}.card:hover::before{opacity:1}
+.card.tilting,.portrait.tilting{transition:border-color .25s,box-shadow .25s!important}.portrait{transition:transform .4s}
+.rv.in,.proj.in{animation:rise .7s cubic-bezier(.2,.7,.2,1) backwards;animation-delay:var(--d,0ms)}@keyframes rise{from{opacity:0;transform:translateY(26px) scale(.97)}}
+.ln{opacity:0}.hero-in.in .ln{animation:lnIn .5s forwards;animation-delay:calc(var(--i,0) * 90ms + .4s)}@keyframes lnIn{from{opacity:0;transform:translateX(-12px)}to{opacity:1;transform:none}}
+.first{background-size:200% 100%;animation:shine 6s ease-in-out infinite alternate}@keyframes shine{to{background-position:100% 0}}
+.sh .file{position:relative}.sh .file::after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--kw);transition:width .8s .3s}.sh.in .file::after{width:100%}
+.btn{position:relative;overflow:hidden}.btn::after{content:"";position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(100deg,transparent,#ffffff55,transparent);transform:skewX(-20deg);transition:left .6s}.btn:hover::after{left:140%}.btn:active{transform:scale(.96)}
+.tag,.chips span,.chip{transition:transform .2s,border-color .2s,color .2s}.tag:hover,.chips span:hover{transform:translateY(-3px);border-color:var(--acc);color:var(--acc)}
+.ico{transition:transform .3s}.card:hover .ico{transform:rotate(-8deg) scale(1.12)}.metric{transition:transform .3s}.metric:hover{transform:scale(1.07)}
+.job::before{transition:transform .25s}.job:hover::before{transform:scale(1.5)}#nav a{transition:transform .2s,background .2s,color .2s}#nav a:hover{transform:translateX(4px)}
+.avwrap{position:absolute;top:0;right:18px;width:132px;height:132px;z-index:3;animation:bob 5s ease-in-out infinite}@keyframes bob{50%{transform:translateY(-8px)}}
+.avwrap .avatar{top:0;right:0;z-index:1;transition:transform .3s}.avwrap .avatar:hover{transform:scale(1.07)}
+.ring{position:absolute;inset:-7px;border-radius:50%;background:conic-gradient(var(--acc),var(--kw),var(--fn),var(--acc));animation:spin 6s linear infinite}
+.marq{overflow:hidden;margin:10px -28px 0;padding:12px 0;border-block:1px solid var(--line);-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.track{display:flex;gap:12px;width:max-content;animation:mq 80s linear infinite}.marq:hover .track{animation-play-state:paused}.track span{font:13px var(--mono);color:var(--st);border:1px solid var(--line);border-radius:99px;padding:3px 14px;background:var(--panel);transition:.2s}.track span:hover{color:var(--acc);border-color:var(--acc);transform:translateY(-2px)}@keyframes mq{to{transform:translateX(-50%)}}
+.topbtn{position:fixed;right:20px;bottom:46px;z-index:40;width:42px;height:42px;border-radius:50%;border:1px solid var(--acc);background:var(--panel);color:var(--acc);font:18px var(--mono);cursor:pointer;opacity:0;transform:translateY(12px);pointer-events:none;transition:.3s}.topbtn.show{opacity:1;transform:none;pointer-events:auto}.topbtn:hover{background:var(--acc);color:var(--bg);transform:translateY(-3px)}
+#pal{position:fixed;inset:0;z-index:100;background:#0008;backdrop-filter:blur(4px);display:grid;place-items:start center;padding-top:14vh}#pal[hidden]{display:none}.pbox{width:min(560px,92vw);background:var(--panel);border:1px solid var(--line);border-radius:14px;box-shadow:0 30px 80px #0008;overflow:hidden;animation:rise .25s}
+#pin{border:0;border-bottom:1px solid var(--line);border-radius:0;font:15px var(--mono);padding:16px 18px;background:var(--bg2)}#pin:focus{outline:none}#plist{list-style:none;margin:0;padding:6px;max-height:320px;overflow:auto}#plist li{padding:9px 14px;border-radius:8px;font:13px var(--mono);cursor:pointer;display:flex;justify-content:space-between}#plist li.on{background:color-mix(in srgb,var(--acc) 18%,transparent)}.phint{padding:8px 14px;font:11px var(--mono);color:var(--dim);border-top:1px solid var(--line)}
+@media (prefers-reduced-motion:reduce){.ln{opacity:1}.track,.ring,.avwrap,.first{animation:none!important}}
+footer{padding:30px;text-align:center;border-top:1px solid var(--line);margin-top:80px;font:12px var(--mono);color:var(--dim)}
+@media (max-width:900px){.hero,.split,.two{grid-template-columns:1fr}.hero{padding-top:30px}.stats{grid-template-columns:repeat(2,1fr)}main{padding:0 18px}.status span:nth-child(n+4){display:none}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important;scroll-behavior:auto!important}.rv,.sh,.hero-in{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div id="prog"></div>
+<header>
+<div class="logo">fayera<span>.dev</span><small>~/portfolio · ml engineer</small></div>
+<div class="lbl">EXPLORER</div><nav id="nav"></nav>
+<div class="lbl">COLOR THEME <span style="letter-spacing:0">(press t)</span></div><div id="themes"></div><button class="theme-btn" id="kbtn" style="margin-top:8px">⌘K · commands</button>
+<div class="side-foot"><a href="https://github.com/fayeradilgasa" target="_blank" rel="noopener">github.com/fayeradilgasa</a></div>
+</header>
+<main>
+<section id="home" class="hero"><svg class="orbit" viewBox="0 0 400 400" aria-hidden="true"><g fill="none" stroke="var(--line)" stroke-dasharray="4 8"><circle cx="200" cy="200" r="190"/><circle cx="200" cy="200" r="140"/><circle cx="200" cy="200" r="90"/></g><g class="spin"><circle cx="200" cy="10" r="7" fill="var(--acc)"/><circle cx="62" cy="270" r="6" fill="var(--kw)"/><circle cx="340" cy="270" r="5" fill="var(--st)"/></g></svg><div class="hero-in">
+<div class="avail"><i></i>open to data science &amp; ML roles</div>
+<div class="hi">Hi, I’m</div>
+<h1><span class="first">Fayera</span><span>Bekele Dilgasa</span></h1>
+<div class="role"><b>&gt;</b> <span id="role"></span><span class="cursor"></span></div>
+<div class="chips"><span>ML Engineering</span><span>Full-Stack</span><span>Android &amp; iOS</span><span>LLM Evaluation</span><span>Cybersecurity</span></div>
+<p class="lead">I build full-stack web and mobile apps, lead engineering teams, and these days I help large language models get smarter, especially in Amharic and Afaan Oromo.</p>
+<div class="cta"><a class="btn main" href="#contact">Get in touch →</a><a class="btn" href="#projects">View my work</a><a class="btn" href="https://github.com/fayeradilgasa" target="_blank" rel="noopener">GitHub</a></div>
+<div class="stats"><div class="stat"><b data-count="10">0</b><small>years building</small></div><div class="stat"><b data-count="40">0</b><small>engineers led</small></div><div class="stat"><b data-count="3">0</b><small>languages</small></div><div class="stat"><b data-count="3">0</b><small>publications</small></div></div>
+</div>
+<div class="cw hero-in"><div class="avwrap"><div class="ring"></div><div class="me avatar" role="img" aria-label="Portrait of Fayera"></div></div><div class="code"><div class="tabs"><i></i><i></i><i></i><b>profile.ts</b></div><pre><code><span class="ln"><span class="cm">// hello, world</span></span><span class="ln"><span class="kw">const</span> <span class="fn">fayera</span> = {</span><span class="ln">  name: <span class="st">"Fayera Bekele Dilgasa"</span>,</span><span class="ln">  based: <span class="st">"Toronto, Ontario"</span>,</span><span class="ln">  speaks: [<span class="st">"Amharic"</span>, <span class="st">"Afaan Oromo"</span>, <span class="st">"English"</span>],</span><span class="ln">  currently: [<span class="st">"CTO @ Eagline"</span>, <span class="st">"LLM Trainer @ Revelo"</span>],</span><span class="ln">  before: [<span class="st">"Dept. Lead"</span>, <span class="st">"Lecturer"</span>],</span><span class="ln">  stack: [<span class="st">"Python"</span>, <span class="st">"TypeScript"</span>, <span class="st">"Kotlin"</span>, <span class="st">"Swift"</span>, <span class="st">"Flutter"</span>],</span><span class="ln">  yearsBuilding: <span class="nu">10</span>,</span><span class="ln">  engineersLed: <span class="nu">40</span>,</span><span class="ln">  openToWork: <span class="kw">true</span>,</span><span class="ln">};</span></code></pre></div></div>
+</section>
+<div class="marq" aria-hidden="true"><div class="track" id="track"></div></div>
+
+<section id="about"><div class="sh"><span class="file">about.ts</span><h2>About me</h2><p class="sub">// ML · LLMs · full-stack · security</p></div>
+<div class="split"><div class="rv"><div class="me portrait" role="img" aria-label="Portrait of Fayera Bekele Dilgasa"><span class="cap">Fayera Bekele Dilgasa · Toronto</span></div><div class="ident"><div><span>NAME</span><b>Fayera Bekele Dilgasa</b></div><div><span>BASED</span><b>Toronto, Ontario, Canada</b></div><div><span>TRAINING</span><b>M.Sc. Computer Engineering, B.Sc. Electrical Engineering, Addis Ababa University</b></div><div><span>NOW</span><b>CTO at Eagline Technologies · LLM Trainer at Revelo</b></div><div><span>LANGUAGES</span><b>AM · OM · EN</b></div></div></div>
+<div class="rv"><div id="about-text"></div><a id="cv" class="btn dis" href="#about" title="CV coming soon">Download CV (soon)</a></div></div>
+<div class="sh" style="margin:46px 0 18px"><span class="file">edge.ts</span><h2 style="font-size:26px">What sets me apart</h2></div><div class="grid" id="edge"></div>
+<div class="metrics"><div class="metric rv"><b data-count="10">0</b><small>years building software</small></div><div class="metric rv"><b data-count="40">0</b><small>engineers led as CTO</small></div><div class="metric rv"><b data-count="2">0</b><small>universities taught &amp; led</small></div><div class="metric rv"><b data-count="3">0</b><small>articles &amp; talks published</small></div></div>
+</section>
+
+<section id="expertise"><div class="sh"><span class="file">expertise.ts</span><h2>Core expertise</h2><p class="sub">// five disciplines I know well</p></div><div class="grid" id="divs"></div>
+<div class="band rv"><h2>Let’s build something real</h2><p>I’m open to ML, data science and model development roles. If you’re shipping something that matters, I’d love to talk.</p><div class="cta"><a class="btn main" href="#contact">Get in touch →</a><a class="btn" href="#projects">View my work</a></div></div></section>
+
+<section id="skills"><div class="sh"><span class="file">skills.ts</span><h2>My skills</h2><p class="sub">// the tools I reach for most</p></div><div class="grid" id="skills-grid"></div></section>
+
+<section id="experience"><div class="sh"><span class="file">experience.ts</span><h2>Experience</h2><p class="sub">// git log --oneline career</p></div><div id="jobs"></div>
+<div class="two"><div class="card rv"><span class="num">EDUCATION</span><h3>M.Sc. Computer Engineering</h3><p>Addis Ababa University, 2014</p><h3>B.Sc. Electrical Engineering</h3><p>Addis Ababa University, 2010</p></div><div class="card rv"><span class="num">WRITING &amp; TALKS</span><ul id="pubs" style="font-size:14px;color:var(--dim)"></ul></div></div></section>
+
+<section id="projects"><div class="sh"><span class="file">projects.ts</span><h2>My projects</h2><p class="sub">// sample work for now. All source code is private</p></div><div class="filters" id="filters"></div><div class="grid" id="project-grid"></div></section>
+
+<section id="contact"><div class="sh"><span class="file">contact.ts</span><h2>Contact me</h2><p class="sub">// let’s start a conversation</p></div>
+<div class="split"><form id="form" class="rv"><input name="name" placeholder="Your name" required><input name="email" type="email" placeholder="Your email" required><input name="subject" placeholder="Subject"><textarea name="message" placeholder="Tell me about your project or just say hello…" required></textarea><button class="btn main" type="submit">Send message →</button><div class="note" id="form-msg"></div></form>
+<div class="rv"><div class="alt"><a href="mailto:fayeradilagasa@gmail.com"><span>EMAIL</span>fayeradilagasa@gmail.com</a><a href="https://github.com/fayeradilgasa" target="_blank" rel="noopener"><span>GITHUB</span>/fayeradilgasa</a><a href="#contact"><span>BASED</span>Toronto, Ontario</a></div>
+<p class="note" style="margin-top:20px">I CAN HELP WITH</p><div class="chips"><span>ML Engineering</span><span>LLM Evaluation</span><span>Data Science</span><span>Full-Stack</span><span>Android &amp; iOS Apps</span></div></div></div></section>
+</main>
+<footer>© Fayera Bekele Dilgasa · hand-built with TypeScript</footer>
+<button id="top" class="topbtn" aria-label="Back to top">↑</button>
+<div id="pal" hidden><div class="pbox"><input id="pin" placeholder="Type a command… (try “projects” or “theme”)" autocomplete="off"><ul id="plist"></ul><div class="phint">↑↓ navigate · Enter select · Esc close</div></div></div>
+<div class="status"><span><span>⎇ main</span><span id="sb-file">home.ts</span></span><span><span id="sb-pos">0%</span><span>TypeScript</span><span>Theme: <b id="sb-theme"></b></span><span id="sb-clock"></span></span></div>
+<script>
+const IMG = /*IMG*/;
+/*JS*/
+</script>
+</body>
+</html>
